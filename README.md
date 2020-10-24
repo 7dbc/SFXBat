@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://raw.githubusercontent.com/s1l3nt78/s1l3nt78.github.io/master/stuff/sfxb.png">
+</p>
+
 # SFXBat
 # Authered by b1krb7
 
@@ -14,7 +18,6 @@ deleted leaving no file traces for infection analysis.
 
 # Important
 [!] Change that names of the scripts and file names within the runtime scripts.
-
 
 Contents:
 - PAYLOAD.zip.exe - Benign SFX Archive to show placement of files for production usage.
